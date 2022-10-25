@@ -42,3 +42,22 @@
 
 - Docker
 - Jenkins
+
+## 멀티 모듈 예시
+
+- common
+    - ex) Common Exception
+- domain
+    - rds
+        - ex) member
+    - redis
+        - ex) member
+- web
+    - security
+    - swagger
+    - ex) member
+    - common
+        - ex) GlobalExceptionHandler
+        - ex) APIResponse
+- server
+    - ex) mim-server
