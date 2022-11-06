@@ -17,7 +17,7 @@ modules.forEach(module -> {
 
 })
 
-private void makeModules(final File moduleDir, final String parentDirNames = ":") {
+private void makeModules(final File moduleDir, final String parentDirNames = "") {
 
     for (final def subModule in moduleDir.listFiles()) {
         if (subModule.file) {
@@ -25,7 +25,7 @@ private void makeModules(final File moduleDir, final String parentDirNames = ":"
         }
 
         if (isModuleDir(subModule)) {
-            makeModules(subModule, "${parentDirNames}${moduleDir.name}")
+            makeModules(subModule, "${parentDirNames}-${moduleDir.name}")
             continue
         }
 
@@ -34,6 +34,11 @@ private void makeModules(final File moduleDir, final String parentDirNames = ":"
         includeModule(parentDirNames, moduleDir, subModule)
 
     }
+}
+
+private static boolean isModuleDir(final File subModule) {
+
+    return subModule.listFiles().size() != 0 && !subModule.list().contains("build.gradle")
 }
 
 private void makeBuildGradleFile(final File subModule) {
@@ -78,12 +83,17 @@ private void includeModule(
         final File subModule
 ) {
 
-    def projectName = "${parentDirNames}-${moduleDir.name}-${subModule.name}"
+    def projectName = getModuleName(parentDirNames, moduleDir, subModule)
     include projectName
     project(projectName).projectDir = subModule
 }
 
-private static boolean isModuleDir(final File subModule) {
+private static String getModuleName(
+        String parentDirNames,
+        File moduleDir,
+        File subModule
+) {
 
-    return subModule.listFiles().size() != 0 && !subModule.list().contains("build.gradle")
+    def firstDashIndex = 1
+    return ":" + "${parentDirNames}-${moduleDir.name}-${subModule.name}".substring(firstDashIndex)
 }
