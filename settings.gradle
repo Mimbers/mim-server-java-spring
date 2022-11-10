@@ -1,4 +1,4 @@
-rootProject.name = 'mim-server-java-spring'
+rootProject.name = 'mim-server'
 
 def modules = [
         "domain",
