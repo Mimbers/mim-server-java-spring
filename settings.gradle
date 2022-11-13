@@ -38,7 +38,7 @@ private void makeModules(final File moduleDir, final String parentDirNames = "")
 
 private static boolean isModuleDir(final File subModule) {
 
-    return subModule.listFiles().size() != 0 && !subModule.list().contains("build.gradle")
+    return subModule.listFiles().size() != 0 && !subModule.list().contains("src")
 }
 
 private void makeBuildGradleFile(final File subModule) {
