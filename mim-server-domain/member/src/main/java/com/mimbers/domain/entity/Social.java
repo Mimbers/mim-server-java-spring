@@ -1,4 +1,4 @@
-package com.mimbers.entity;
+package com.mimbers.domain.entity;
 
 import lombok.*;
 
@@ -6,15 +6,15 @@ import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Alert extends BaseTimeEntity{
+public class Social extends BaseRemoveEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id", nullable = false)
+    @JoinColumn(name = "member_id", nullable = false, unique = true)
     private Member member;
 
     @Column(nullable = false)
-    private String message;
+    private String clientId;
 
     @Column(nullable = false)
-    private boolean isRead;
+    private String serviceProvider;
 }

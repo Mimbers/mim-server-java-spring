@@ -1,6 +1,7 @@
-package com.mimbers.entity;
+package com.mimbers.domain.entity;
 
 public enum Mbti {
+
     ENFJ,
     ENTJ,
     ENFP,

@@ -1,4 +1,4 @@
-package com.mimbers.entity;
+package com.mimbers.domain.entity;
 
 import lombok.*;
 
@@ -8,9 +8,8 @@ import javax.persistence.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class MbtiHistory extends BaseTimeEntity {
 
-    @Column(nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "member_id", nullable = false)
     private Member member;
 
     @Enumerated(EnumType.STRING)

@@ -1,5 +1,6 @@
 package com.mimbers.entity;
 
+import com.mimbers.domain.entity.*;
 import lombok.*;
 
 import javax.persistence.*;

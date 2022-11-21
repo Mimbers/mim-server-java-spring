@@ -1,4 +1,4 @@
-package com.mimbers.entity;
+package com.mimbers.domain.entity;
 
 import lombok.*;
 
@@ -22,7 +22,7 @@ public class Review extends BaseTimeEntity {
     private Integer score;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id", nullable = false)
+    @JoinColumn(name = "create_member", nullable = false)
     private Member createMember;
 }
 
