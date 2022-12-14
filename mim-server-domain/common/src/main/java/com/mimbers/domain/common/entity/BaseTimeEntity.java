@@ -1,4 +1,4 @@
-package com.mimbers.domain.entity;
+package com.mimbers.domain.common.entity;
 
 import lombok.*;
 import org.springframework.data.annotation.*;

@@ -1,4 +1,4 @@
-package com.mimbers.domain.entity;
+package com.mimbers.domain.member.entity;
 
 import lombok.*;
 

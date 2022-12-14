@@ -1,6 +1,6 @@
-package com.mimbers.entity;
+package com.mimbers.domain.chat.entity;
 
-import com.mimbers.domain.entity.*;
+import com.mimbers.domain.common.entity.*;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 

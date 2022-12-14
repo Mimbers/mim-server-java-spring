@@ -1,5 +1,7 @@
-package com.mimbers.domain.entity;
+package com.mimbers.domain.review.entity;
 
+import com.mimbers.domain.common.entity.*;
+import com.mimbers.domain.member.entity.*;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,7 +24,7 @@ public class Review extends BaseTimeEntity {
     private Integer score;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "create_member", nullable = false)
+    @JoinColumn(name = "create_member_id", nullable = false)
     private Member createMember;
 }
 
