@@ -1,5 +1,4 @@
-package com.mimbers.entity;
-
+package com.mimbers.domain.common.entity;
 
 import lombok.*;
 import org.springframework.data.annotation.*;
@@ -11,6 +10,7 @@ import java.time.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public abstract class BaseTimeEntity extends BaseEntity {
 
+
     @CreatedDate
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
@@ -18,5 +18,4 @@ public abstract class BaseTimeEntity extends BaseEntity {
     @LastModifiedDate
     @Column(nullable = false)
     private LocalDateTime updatedAt;
-
 }

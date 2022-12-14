@@ -1,5 +1,6 @@
-package com.mimbers.entity;
+package com.mimbers.domain.member.entity;
 
+import com.mimbers.domain.common.entity.*;
 import lombok.*;
 
 import javax.persistence.*;

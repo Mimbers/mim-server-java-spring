@@ -1,4 +1,4 @@
-package com.mimbers.entity;
+package com.mimbers.domain.member.entity;
 
 import lombok.*;
 
@@ -16,5 +16,4 @@ public class Address {
 
     @Column(nullable = false)
     private String detailAddress;
-
 }
