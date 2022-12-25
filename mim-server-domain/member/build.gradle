@@ -1,0 +1,7 @@
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    api(project(':mim-server-domain-common'))
+    runtimeOnly 'mysql:mysql-connector-java'
+}
+bootJar { enabled = false }
+jar { enabled = true }
