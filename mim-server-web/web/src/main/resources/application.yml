@@ -1,0 +1,17 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+swagger:
+  base-package: com.mimbers
+  api:
+    contact:
+      name: developer
+      url: www.mim.com
+      email:
+    version: ver 1.0
+    title: Meeting In MBTI
+    terms-of-service-url:
+    license:
+    license-url:
