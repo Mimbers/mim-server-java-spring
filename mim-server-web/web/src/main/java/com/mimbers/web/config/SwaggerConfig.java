@@ -22,18 +22,7 @@ public class SwaggerConfig {
         log.info("( dump ) $config.swagger={}", this);
     }
 
-    private String basePackage = "com.mimbers";
-    private ApiInformation api = new ApiInformation();
-
-    @Data
-    public static class ApiInformation {
-        private String description;
-        private String version;
-        private String title;
-        private String termsOfServiceUrl;
-        private String license;
-        private String licenseUrl;
-    }
+    private Properties properties = new Properties();
 
     /**
      * Default docket
@@ -46,19 +35,19 @@ public class SwaggerConfig {
                 .groupName("v1")
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage(basePackage))
+                .apis(RequestHandlerSelectors.basePackage(properties.BASE_PACKAGE()))
                 .paths(PathSelectors.any())
                 .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title(api.title)
-                .version(api.version)
-                .description(api.description)
-                .termsOfServiceUrl(api.termsOfServiceUrl)
-                .license(api.license)
-                .licenseUrl(api.licenseUrl)
+                .title(properties.TITLE())
+                .version(properties.VERSION())
+                .description(properties.DESCRIPTION())
+                .termsOfServiceUrl(properties.TERMS_OF_SERVICE_URL())
+                .license(properties.LICENSE())
+                .licenseUrl(properties.LICENSE_URL())
                 .build();
     }
 }
