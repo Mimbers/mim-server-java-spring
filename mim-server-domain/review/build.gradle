@@ -1,0 +1,5 @@
+dependencies {
+    implementation(project(':mim-server-domain-common'))
+}
+bootJar { enabled = false }
+jar { enabled = true }

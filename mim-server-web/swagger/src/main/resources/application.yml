@@ -1,0 +1,15 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jackson:
+    visibility.field: any # for `@Accessors(fluent = true)`
+  datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mysql://localhost:3306/mim
+    username: mimber
+    password: mim1105!
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
